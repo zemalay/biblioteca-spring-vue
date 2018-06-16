@@ -1,0 +1,64 @@
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 30px;
+  color: #000000;
+  background: #F2F2F2;
+}
+
+.container {
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative; 
+}
+
+#formulario {
+  background: #F9F9F9;
+  padding: 25px;
+  margin: 20px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#formulario h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+
+#formulario input[type="text"] textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#formulario button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #DF0101;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+#formulario input{
+  border: 0.5px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
