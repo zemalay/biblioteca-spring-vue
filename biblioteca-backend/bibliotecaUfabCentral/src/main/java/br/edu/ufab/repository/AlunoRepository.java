@@ -45,7 +45,7 @@ public interface AlunoRepository extends JpaRepository<Aluno, Long> {
 	 */
 	@Query("SELECT CASE WHEN COUNT(a) > 0 THEN true ELSE false END FROM Aluno a WHERE a.cpf = :cpf")
 	boolean isCpfExiste(@Param("cpf") String cpf);
-	
+
 	/**
 	 * Pegar o ultimo aluno cadastrado
 	 * 
@@ -54,4 +54,12 @@ public interface AlunoRepository extends JpaRepository<Aluno, Long> {
 	@Query("SELECT max(a.id) FROM Aluno a ORDER BY a.id DESC")
 	long getLastAluno();
 
+	/**
+	 * Seleciona o objeto aluno pelo id do curso.
+	 * 
+	 * @param id
+	 * @return Aluno
+	 */
+	@Query("SELECT a FROM Aluno a WHERE a.curso.id = :idCurso")
+	Aluno procuraPorCursoId(@Param("idCurso") Long curso_id);
 }

@@ -6,6 +6,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import br.edu.ufab.model.Curso;
+import br.edu.ufab.repository.AlunoRepository;
 import br.edu.ufab.repository.CursoRepository;
 
 /**
@@ -16,6 +17,9 @@ public class CursoService implements Service<Curso> {
 
 	@Autowired
 	private CursoRepository cursoRepository;
+
+	@Autowired
+	private AlunoRepository alunoRepository;
 	private static Logger logger = Logger.getLogger(CursoService.class);
 
 	/**
@@ -60,6 +64,9 @@ public class CursoService implements Service<Curso> {
 			logger.warn("Curso nao existe");
 			return false;
 		}
+		if (alunoRepository.procuraPorCursoId(curso.getId()) != null) {
+			return false;
+		}
 		cursoRepository.delete(curso);
 		logger.info("Curso foi removido");
 		return true;
@@ -70,7 +77,7 @@ public class CursoService implements Service<Curso> {
 	 */
 	public List<Curso> pegarTodos() {
 		logger.info("Pegar todos os cursos no banco");
-		
+
 		return cursoRepository.findAll();
 	}
 

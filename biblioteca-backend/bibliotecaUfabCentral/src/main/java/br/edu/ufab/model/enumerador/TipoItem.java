@@ -2,7 +2,7 @@ package br.edu.ufab.model.enumerador;
 
 
 /**
- * @autor geovanniovinhas <vinhasgeovannio@gmail.com
+ * @author geovanniovinhas
  *
  *
  */

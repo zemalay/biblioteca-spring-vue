@@ -1,7 +1,6 @@
 package br.edu.ufab.model;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
