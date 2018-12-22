@@ -38,6 +38,9 @@ public class AlunoService implements Service<Aluno> {
 		}
 
 		Curso curso = cursoRepository.procurarPorId(obj.getCurso().getId());
+		if(curso == null) {
+			return false;
+		}
 		obj.setCurso(curso);
 
 		obj.setMatricula(gerarMatricula(obj));
