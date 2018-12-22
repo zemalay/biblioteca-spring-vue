@@ -1,5 +1,7 @@
 package br.edu.ufab.repository;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -61,5 +63,5 @@ public interface AlunoRepository extends JpaRepository<Aluno, Long> {
 	 * @return Aluno
 	 */
 	@Query("SELECT a FROM Aluno a WHERE a.curso.id = :idCurso")
-	Aluno procuraPorCursoId(@Param("idCurso") Long curso_id);
+	List<Aluno> procuraPorCursoId(@Param("idCurso") Long curso_id);
 }
